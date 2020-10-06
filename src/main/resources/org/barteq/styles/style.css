@@ -1,0 +1,4 @@
+#mainBorderPane {
+    -fx-background-image: url("img/mainBackground.jpg");
+    -fx-background-size: 100% 100%;
+}

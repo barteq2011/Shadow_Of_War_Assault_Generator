@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.barteq.MainWindowController"
+            id="mainBorderPane"
+            prefHeight="400.0" prefWidth="600.0" stylesheets="@styles/style.css">
+    <top>
+        <MenuBar fx:id="menuBar">
+            <Menu text="Menu">
+                <MenuItem text="Generate new Assault" onAction="#generateNewAssaultItem"/>
+                <SeparatorMenuItem/>
+                <MenuItem text="About App" onAction="#handleAboutMenuItem"/>
+                <MenuItem text="Exit" style="-fx-text-fill:red;" onAction="#handleExitMenuItem"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <VBox alignment="CENTER">
+            <Label text="Actual Assault Fortess: ">
+                <font>
+                    <Font size="16"/>
+                </font>
+            </Label>
+            <Label fx:id="fortessLabel" text="NONE">
+                <font>
+                    <Font size="20"/>
+                </font>
+            </Label>
+            <Label text="Remaining Time: ">
+                <font>
+                    <Font size="16"/>
+                </font>
+            </Label>
+            <Label fx:id="timeUntilAssaultLabel" text="NONE">
+                <font>
+                    <Font size="20"/>
+                </font>
+            </Label>
+            <Button fx:id="timerButton" text="Start Timer" prefHeight="40" prefWidth="200" onAction="#handleStartTimerButton">
+                <font>
+                    <Font size="20"/>
+                </font>
+                <VBox.margin>
+                    <Insets top="20"/>
+                </VBox.margin>
+            </Button>
+        </VBox>
+    </center>
+</BorderPane>
