@@ -3,7 +3,7 @@ package org.barteq.alerting;
 
 import javafx.scene.control.Alert;
 
-// Class of prepared alerts for informing usder of changes or errors in program
+// Class of prepared alerts for informing user of changes or errors in program
 public class Alerts {
     public static void showError(String content) {
         Alert error = new Alert(Alert.AlertType.ERROR);
