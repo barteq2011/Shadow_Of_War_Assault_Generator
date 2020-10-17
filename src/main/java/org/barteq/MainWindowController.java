@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class MainWindowController {
     // Default time until assault
-    private static final int ASSAULT_INITIAL_TIME = 5400;
+    private static final int[] ASSAULT_INITIAL_TIME = { 5400, 3600, 1800, 0 };
     private int actualUntilAssaultTime;
     @FXML
     private MenuBar menuBar;
@@ -132,9 +132,9 @@ public class MainWindowController {
         String[] fortesses = DatabseHandler.getInstance().queryFortesses();
         if (fortesses != null) {
             // Random new assault and return it
-            int fortessNumber = (int) (new Random().nextDouble() * fortesses.length);
+            int fortessNumber = new Random().nextInt(fortesses.length);
             String fortess = fortesses[fortessNumber];
-            return Assault.of(fortess, ASSAULT_INITIAL_TIME);
+            return Assault.of(fortess, ASSAULT_INITIAL_TIME[new Random().nextInt(ASSAULT_INITIAL_TIME.length)]);
         }
         return null;
     }
